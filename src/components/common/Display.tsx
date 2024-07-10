@@ -4,7 +4,7 @@ interface ScreenProps {
   text?: string;
 }
 
-const screen: React.FC<ScreenProps> = ({
+const Display: React.FC<ScreenProps> = ({
   text=undefined
 }) => {
   return (
@@ -25,4 +25,4 @@ const screen: React.FC<ScreenProps> = ({
   )
 }
 
-export default screen;
+export default Display;

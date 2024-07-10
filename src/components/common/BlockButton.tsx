@@ -3,15 +3,13 @@ import { Button } from 'antd';
 interface ButtonProps {
   text?: string;
   icon?: any;
+  onClick?: () => void;
 };
-
-const onClick = () => {
-  console.log('Button Clicked');
-}
 
 const BlockButton: React.FC<ButtonProps> = ({
   text=undefined,
   icon=undefined,
+  onClick,
 }) => {
 
   return (

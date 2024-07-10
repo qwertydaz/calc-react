@@ -1,23 +1,20 @@
-import { useEffect, useState } from 'react';
-import Screen from './common/Screen';
+import Display from './common/Display';
 import { Card } from 'antd';
-import { isNil } from 'lodash';
-import { FunctionKeys, NumberKeys, OperatorKeys } from '../consts/KeypadConsts';
-import BlockButton from './common/BlockButton';
+import { NumberKeys } from '../consts/KeypadConsts';
+import { useSelector } from 'react-redux';
+import { RootState } from '../store';
+import ClearButton from './buttons/ClearButton';
+import NumberButton from './buttons/NumberButton';
+import EqualsButton from './buttons/EqualsButton';
+import PlusButton from './buttons/PlusButton';
+import MinusButton from './buttons/MinusButton';
+import DivideButton from './buttons/DivideButton';
+import MultiplyButton from './buttons/MultiplyButton';
+import BackspaceButton from './buttons/BackspaceButton';
+import DecimalButton from './buttons/DecimalButton';
 
 const Calculator: React.FC = () => {
-  const [expression, setExpression] = useState<string>();
-  const [result, setResult] = useState<string>();
-  const [screenText, setScreenText] = useState<string>('no input ...');
-
-  useEffect(() => {
-    if (isNil(expression) && isNil(result)) return;
-    if (!isNil(expression) && isNil(result)) {
-      setScreenText(expression);
-      return;
-    }
-    setScreenText(expression + ' = ' + result)
-  }, [expression, result]);
+  const displayValue = useSelector((state: RootState) => state.calculator.displayValue);
 
   const rowStyle: React.CSSProperties = {
     width: '25%',
@@ -32,62 +29,62 @@ const Calculator: React.FC = () => {
   return (
     <Card
       test-id='calculator'
-      title={<Screen text={screenText} />}
+      title={<Display text={displayValue} />}
       bordered={false}
     >
       <Card.Grid hoverable={false} style={rowStyle}>
-        <BlockButton text={FunctionKeys.BACKSPACE} />
+        <BackspaceButton />
       </Card.Grid>
       <Card.Grid hoverable={false} style={rowStyle}>
-        <BlockButton text={FunctionKeys.CLEAR} />
+        <ClearButton />
       </Card.Grid>
       <Card.Grid hoverable={false} style={rowStyle}>
-        <BlockButton text={FunctionKeys.DECIMAL} />
+        <DecimalButton />
       </Card.Grid>
       <Card.Grid hoverable={false} style={rowStyle}>
-        <BlockButton text={OperatorKeys.DIVIDE} />
+        <DivideButton />
       </Card.Grid>
       <Card.Grid hoverable={false} style={rowStyle}>
-        <BlockButton text={NumberKeys.SEVEN} />
+        <NumberButton numberText={NumberKeys.SEVEN} />
       </Card.Grid>
       <Card.Grid hoverable={false} style={rowStyle}>
-        <BlockButton text={NumberKeys.EIGHT} />
+        <NumberButton numberText={NumberKeys.EIGHT} />
       </Card.Grid>
       <Card.Grid hoverable={false} style={rowStyle}>
-        <BlockButton text={NumberKeys.NINE} />
+        <NumberButton numberText={NumberKeys.NINE} />
       </Card.Grid>
       <Card.Grid hoverable={false} style={rowStyle}>
-        <BlockButton text={OperatorKeys.MULTIPLY} />
+        <MultiplyButton />
       </Card.Grid>
       <Card.Grid hoverable={false} style={rowStyle}>
-        <BlockButton text={NumberKeys.FOUR} />
+        <NumberButton numberText={NumberKeys.FOUR} />
       </Card.Grid>
       <Card.Grid hoverable={false} style={rowStyle}>
-        <BlockButton text={NumberKeys.FIVE} />
+        <NumberButton numberText={NumberKeys.FIVE} />
       </Card.Grid>
       <Card.Grid hoverable={false} style={rowStyle}>
-        <BlockButton text={NumberKeys.SIX} />
+        <NumberButton numberText={NumberKeys.SIX} />
       </Card.Grid>
       <Card.Grid hoverable={false} style={rowStyle}>
-        <BlockButton text={OperatorKeys.MINUS} />
+        <MinusButton />
       </Card.Grid>
       <Card.Grid hoverable={false} style={rowStyle}>
-        <BlockButton text={NumberKeys.ONE} />
+        <NumberButton numberText={NumberKeys.ONE} />
       </Card.Grid>
       <Card.Grid hoverable={false} style={rowStyle}>
-        <BlockButton text={NumberKeys.TWO} />
+        <NumberButton numberText={NumberKeys.TWO} />
       </Card.Grid>
       <Card.Grid hoverable={false} style={rowStyle}>
-        <BlockButton text={NumberKeys.THREE} />
+        <NumberButton numberText={NumberKeys.THREE} />
       </Card.Grid>
       <Card.Grid hoverable={false} style={rowStyle}>
-        <BlockButton text={OperatorKeys.PLUS} />
+        <PlusButton />
       </Card.Grid>
       <Card.Grid hoverable={false} style={bottomRowStyle}>
-        <BlockButton text={NumberKeys.ZERO} />
+        <NumberButton numberText={NumberKeys.ZERO} />
       </Card.Grid>
       <Card.Grid hoverable={false} style={bottomRowStyle}>
-        <BlockButton text={FunctionKeys.EQUALS} />
+        <EqualsButton />
       </Card.Grid>
     </Card>
   );

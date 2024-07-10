@@ -1,43 +1,47 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface CalculatorState {
-  operand1: number;
-  operand2: number;
-  operator: string;
-  result: number;
+  displayValue: string;
+  previousValue: string;
+  operator: string | null;
+  waitingForOperand: boolean;
 };
 
 const initialState: CalculatorState = {
-  operand1: 0,
-  operand2: 0,
-  operator: '',
-  result: 0,
+  displayValue: 'no input ...',
+  previousValue: '',
+  operator: null,
+  waitingForOperand: false,
 };
 
 const calculatorSlice = createSlice({
   name: 'calculator',
   initialState,
   reducers: {
-    setOperand1: (state: CalculatorState, action: PayloadAction<number>) => {
-      state.operand1 = action.payload;
+    setDisplayValue: (state: CalculatorState, action: PayloadAction<string>) => {
+      state.displayValue = action.payload;
     },
-    setOperand2: (state: CalculatorState, action: PayloadAction<number>) => {
-      state.operand2 = action.payload;
+    setPreviousValue: (state: CalculatorState, action: PayloadAction<string>) => {
+      state.previousValue = action.payload;
     },
-    setOperator: (state: CalculatorState, action: PayloadAction<string>) => {
+    setOperator: (state: CalculatorState, action: PayloadAction<string | null>) => {
       state.operator = action.payload;
     },
-    setResult: (state: CalculatorState, action: PayloadAction<number>) => {
-      state.result = action.payload;
+    setWaitingForOperand: (state: CalculatorState, action: PayloadAction<boolean>) => {
+      state.waitingForOperand = action.payload;
+    },
+    clearDisplay: (state: CalculatorState) => {
+      return initialState;
     },
   },
 });
 
 export const {
-  setOperand1,
-  setOperand2,
+  setDisplayValue,
+  setPreviousValue,
   setOperator,
-  setResult,
+  setWaitingForOperand,
+  clearDisplay,
 } = calculatorSlice.actions;
 
 export default calculatorSlice.reducer;
