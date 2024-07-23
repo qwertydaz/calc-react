@@ -46,6 +46,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-transform-private-property-in-object": "^7.24.7",
     "@types/antd": "^1.0.0",
     "@types/lodash": "^4.17.6"
   }
