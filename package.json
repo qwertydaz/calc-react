@@ -1,6 +1,7 @@
 {
   "name": "calc-react",
   "version": "1.0-SNAPSHOT",
+  "homepage": ".",
   "private": true,
   "dependencies": {
     "@ant-design/icons": "^5.3.7",
@@ -46,7 +47,7 @@
     ]
   },
   "devDependencies": {
-    "@babel/plugin-transform-private-property-in-object": "^7.24.7",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@types/antd": "^1.0.0",
     "@types/lodash": "^4.17.6"
   }
