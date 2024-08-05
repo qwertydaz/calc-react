@@ -1,4 +1,4 @@
-import { FunctionKeys } from '../../consts/KeypadConsts';
+import { FunctionKey } from '../../consts/enums';
 import BlockButton from '../common/BlockButton';
 // import { useDispatch } from 'react-redux';
 
@@ -11,7 +11,7 @@ const BackspaceButton: React.FC = () => {
   }
 
   return (
-    <BlockButton text={FunctionKeys.BACKSPACE} onClick={onClick} />
+    <BlockButton text={FunctionKey.BACKSPACE} onClick={onClick} />
   );
 };
 

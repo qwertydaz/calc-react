@@ -1,26 +1,21 @@
-import Display from './common/Display';
+import DisplayScreen from './display/DisplayScreen';
 import { Card } from 'antd';
-import { NumberKeys } from '../consts/KeypadConsts';
-import { useSelector } from 'react-redux';
-import { RootState } from '../store';
+import { NumberKey } from '../consts/enums';
 import ClearButton from './buttons/ClearButton';
 import NumberButton from './buttons/NumberButton';
-import EqualsButton from './buttons/EqualsButton';
-import PlusButton from './buttons/PlusButton';
-import MinusButton from './buttons/MinusButton';
+import EquateButton from './buttons/EquateButton';
+import AddButton from './buttons/AddButton';
+import SubtractButton from './buttons/SubtractButton';
 import DivideButton from './buttons/DivideButton';
 import MultiplyButton from './buttons/MultiplyButton';
 import BackspaceButton from './buttons/BackspaceButton';
 import DecimalButton from './buttons/DecimalButton';
 
 const Calculator: React.FC = () => {
-  const displayValue = useSelector((state: RootState) => state.calculator.displayValue);
-
   const rowStyle: React.CSSProperties = {
     width: '25%',
     textAlign: 'center',
   };
-
   const bottomRowStyle: React.CSSProperties = {
     width: '50%',
     textAlign: 'center',
@@ -28,8 +23,9 @@ const Calculator: React.FC = () => {
 
   return (
     <Card
-      test-id='calculator'
-      title={<Display text={displayValue} />}
+      data-testid='calculator'
+      className='calculator'
+      title={<DisplayScreen />}
       bordered={false}
     >
       <Card.Grid hoverable={false} style={rowStyle}>
@@ -45,46 +41,46 @@ const Calculator: React.FC = () => {
         <DivideButton />
       </Card.Grid>
       <Card.Grid hoverable={false} style={rowStyle}>
-        <NumberButton numberText={NumberKeys.SEVEN} />
+        <NumberButton numberText={NumberKey.SEVEN} />
       </Card.Grid>
       <Card.Grid hoverable={false} style={rowStyle}>
-        <NumberButton numberText={NumberKeys.EIGHT} />
+        <NumberButton numberText={NumberKey.EIGHT} />
       </Card.Grid>
       <Card.Grid hoverable={false} style={rowStyle}>
-        <NumberButton numberText={NumberKeys.NINE} />
+        <NumberButton numberText={NumberKey.NINE} />
       </Card.Grid>
       <Card.Grid hoverable={false} style={rowStyle}>
         <MultiplyButton />
       </Card.Grid>
       <Card.Grid hoverable={false} style={rowStyle}>
-        <NumberButton numberText={NumberKeys.FOUR} />
+        <NumberButton numberText={NumberKey.FOUR} />
       </Card.Grid>
       <Card.Grid hoverable={false} style={rowStyle}>
-        <NumberButton numberText={NumberKeys.FIVE} />
+        <NumberButton numberText={NumberKey.FIVE} />
       </Card.Grid>
       <Card.Grid hoverable={false} style={rowStyle}>
-        <NumberButton numberText={NumberKeys.SIX} />
+        <NumberButton numberText={NumberKey.SIX} />
       </Card.Grid>
       <Card.Grid hoverable={false} style={rowStyle}>
-        <MinusButton />
+        <SubtractButton />
       </Card.Grid>
       <Card.Grid hoverable={false} style={rowStyle}>
-        <NumberButton numberText={NumberKeys.ONE} />
+        <NumberButton numberText={NumberKey.ONE} />
       </Card.Grid>
       <Card.Grid hoverable={false} style={rowStyle}>
-        <NumberButton numberText={NumberKeys.TWO} />
+        <NumberButton numberText={NumberKey.TWO} />
       </Card.Grid>
       <Card.Grid hoverable={false} style={rowStyle}>
-        <NumberButton numberText={NumberKeys.THREE} />
+        <NumberButton numberText={NumberKey.THREE} />
       </Card.Grid>
       <Card.Grid hoverable={false} style={rowStyle}>
-        <PlusButton />
+        <AddButton />
       </Card.Grid>
       <Card.Grid hoverable={false} style={bottomRowStyle}>
-        <NumberButton numberText={NumberKeys.ZERO} />
+        <NumberButton numberText={NumberKey.ZERO} />
       </Card.Grid>
       <Card.Grid hoverable={false} style={bottomRowStyle}>
-        <EqualsButton />
+        <EquateButton />
       </Card.Grid>
     </Card>
   );

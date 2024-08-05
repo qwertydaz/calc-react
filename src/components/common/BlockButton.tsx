@@ -1,23 +1,33 @@
 import { Button } from 'antd';
+import { ConfigContext } from 'antd/es/config-provider';
+import { useContext } from 'react';
 
-interface ButtonProps {
+interface BlockButtonProps {
+  className?: string;
   text?: string;
-  icon?: any;
+  icon?: React.ReactNode;
   onClick?: () => void;
 };
 
-const BlockButton: React.FC<ButtonProps> = ({
-  text=undefined,
-  icon=undefined,
+const BlockButton: React.FC<BlockButtonProps> = ({
+  className='',
+  text,
+  icon,
   onClick,
+  ...props
 }) => {
+
+  const { getPrefixCls } = useContext(ConfigContext);
+  const rootPrefixCls = getPrefixCls();
 
   return (
     <Button
-      test-id='block-button'
+      data-testid={className}
+      className={`block-button ${className} ${rootPrefixCls}-btn-primary`}
       block
       icon={icon}
       onClick={onClick}
+      {...props}
     >
       {text}
     </Button>

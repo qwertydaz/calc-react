@@ -1,46 +1,47 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { LabeledValue, Operator } from '../consts/types';
 
 interface CalculatorState {
-  displayValue: string;
-  previousValue: string;
-  operator: string | null;
-  waitingForOperand: boolean;
+  currentOperand: string;
+  firstOperand?: LabeledValue<number>;
+  secondOperand?: LabeledValue<number>;
+  operator?: LabeledValue<Operator>;
 };
 
 const initialState: CalculatorState = {
-  displayValue: 'no input ...',
-  previousValue: '',
-  operator: null,
-  waitingForOperand: false,
+  currentOperand: 'please input a number ...',
+  firstOperand: undefined,
+  secondOperand: undefined,
+  operator: undefined,
 };
 
 const calculatorSlice = createSlice({
   name: 'calculator',
   initialState,
   reducers: {
-    setDisplayValue: (state: CalculatorState, action: PayloadAction<string>) => {
-      state.displayValue = action.payload;
+    setCurrentOperand: (state: CalculatorState, action: PayloadAction<string>) => {
+      state.currentOperand = action.payload;
     },
-    setPreviousValue: (state: CalculatorState, action: PayloadAction<string>) => {
-      state.previousValue = action.payload;
+    setFirstOperand: (state: CalculatorState, action: PayloadAction<LabeledValue<number>>) => {
+      state.firstOperand = action.payload;
     },
-    setOperator: (state: CalculatorState, action: PayloadAction<string | null>) => {
+    setSecondOperand: (state: CalculatorState, action: PayloadAction<LabeledValue<number>>) => {
+      state.secondOperand = action.payload;
+    },
+    setOperator: (state: CalculatorState, action: PayloadAction<LabeledValue<Operator>>) => {
       state.operator = action.payload;
     },
-    setWaitingForOperand: (state: CalculatorState, action: PayloadAction<boolean>) => {
-      state.waitingForOperand = action.payload;
-    },
-    clearDisplay: (state: CalculatorState) => {
+    clearDisplay: () => {
       return initialState;
     },
   },
 });
 
 export const {
-  setDisplayValue,
-  setPreviousValue,
+  setCurrentOperand,
+  setFirstOperand,
+  setSecondOperand,
   setOperator,
-  setWaitingForOperand,
   clearDisplay,
 } = calculatorSlice.actions;
 

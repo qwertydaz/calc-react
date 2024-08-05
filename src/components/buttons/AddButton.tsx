@@ -2,17 +2,17 @@ import { OperatorKey } from '../../consts/enums';
 import BlockButton from '../common/BlockButton';
 // import { useDispatch } from 'react-redux';
 
-const DivideButton: React.FC = () => {
+const AddButton: React.FC = () => {
   // const dispatch = useDispatch();
 
   const onClick = () => {
-    console.log('Division operator clicked');
+    console.log('Addition operator clicked');
     // dispatch(clearDisplay())
-  };
+  }
 
   return (
-    <BlockButton text={OperatorKey.DIVISION} onClick={onClick} />
+    <BlockButton text={OperatorKey.ADDITION} onClick={onClick} />
   );
 };
 
-export default DivideButton;
+export default AddButton;

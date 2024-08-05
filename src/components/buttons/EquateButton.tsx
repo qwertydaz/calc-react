@@ -1,8 +1,8 @@
-import { FunctionKeys } from '../../consts/KeypadConsts';
+import { FunctionKey } from '../../consts/enums';
 import BlockButton from '../common/BlockButton';
 // import { useDispatch } from 'react-redux';
 
-const EqualsButton: React.FC = () => {
+const EquateButton: React.FC = () => {
   // const dispatch = useDispatch();
 
   const onClick = () => {
@@ -11,8 +11,12 @@ const EqualsButton: React.FC = () => {
   }
 
   return (
-    <BlockButton text={FunctionKeys.EQUALS} onClick={onClick} />
+    <BlockButton
+      className='equate-button'
+      text={FunctionKey.EQUATE}
+      onClick={onClick}
+    />
   );
 };
 
-export default EqualsButton;
+export default EquateButton;

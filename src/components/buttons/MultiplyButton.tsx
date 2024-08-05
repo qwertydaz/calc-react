@@ -1,4 +1,4 @@
-import { OperatorKeys } from '../../consts/KeypadConsts';
+import { OperatorKey } from '../../consts/enums';
 import BlockButton from '../common/BlockButton';
 // import { useDispatch } from 'react-redux';
 
@@ -6,12 +6,12 @@ const MultiplyButton: React.FC = () => {
   // const dispatch = useDispatch();
 
   const onClick = () => {
-    console.log('Multiply operator clicked');
+    console.log('Multiplication operator clicked');
     // dispatch(clearDisplay())
   }
 
   return (
-    <BlockButton text={OperatorKeys.MULTIPLY} onClick={onClick} />
+    <BlockButton text={OperatorKey.MULTIPLICATION} onClick={onClick} />
   );
 };
 

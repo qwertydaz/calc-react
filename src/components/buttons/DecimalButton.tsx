@@ -1,4 +1,4 @@
-import { FunctionKeys } from '../../consts/KeypadConsts';
+import { FunctionKey } from '../../consts/enums';
 import BlockButton from '../common/BlockButton';
 // import { useDispatch } from 'react-redux';
 
@@ -11,7 +11,7 @@ const DecimalButton: React.FC = () => {
   }
 
   return (
-    <BlockButton text={FunctionKeys.DECIMAL} onClick={onClick} />
+    <BlockButton text={FunctionKey.DECIMAL} onClick={onClick} />
   );
 };
 

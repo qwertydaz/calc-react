@@ -14,7 +14,11 @@ const NumberButton: React.FC<NumberButtonProps> = ({numberText}) => {
   }
 
   return (
-    <BlockButton text={numberText} onClick={onClick} />
+    <BlockButton
+      className='number-button'
+      text={numberText}
+      onClick={onClick}
+    />
   );
 };
 
