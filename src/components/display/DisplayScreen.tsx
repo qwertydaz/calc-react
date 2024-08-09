@@ -4,7 +4,11 @@ import CurrentOperand from './CurrentOperand';
 
 const DisplayScreen: React.FC = () => {
   return (
-    <Flex vertical>
+    <Flex
+      data-testid={'display-screen'}
+      className={'display-screen'}
+      vertical
+    >
       <Expression />
       <CurrentOperand />
     </Flex>

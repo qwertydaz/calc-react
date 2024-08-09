@@ -19,10 +19,11 @@ const enum OperatorKey {
 };
 
 const enum FunctionKey {
+  BACKSPACE = '←',
+  NEGATE = '±',
   CLEAR = 'C',
   SOLVE = '=',
   DECIMAL = '.',
-  BACKSPACE = '←',
 };
 
 const enum Mode {

@@ -11,7 +11,11 @@ const AddButton: React.FC = () => {
   }
 
   return (
-    <BlockButton text={OperatorKey.ADDITION} onClick={onClick} />
+    <BlockButton
+      className='operator-button'
+      text={OperatorKey.ADDITION}
+      onClick={onClick}
+    />
   );
 };
 

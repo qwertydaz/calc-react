@@ -11,7 +11,11 @@ const MultiplyButton: React.FC = () => {
   }
 
   return (
-    <BlockButton text={OperatorKey.MULTIPLICATION} onClick={onClick} />
+    <BlockButton
+      className='operator-button'
+      text={OperatorKey.MULTIPLICATION}
+      onClick={onClick}
+    />
   );
 };
 

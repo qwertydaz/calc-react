@@ -2,21 +2,21 @@ import { FunctionKey } from '../../consts/enums';
 import BlockButton from '../common/BlockButton';
 // import { useDispatch } from 'react-redux';
 
-const BackspaceButton: React.FC = () => {
+const NegateButton: React.FC = () => {
   // const dispatch = useDispatch();
 
   const onClick = () => {
-    console.log('Backspace function clicked');
+    console.log('Negate function clicked');
     // dispatch(clearDisplay())
   }
 
   return (
     <BlockButton
       className='function-button'
-      text={FunctionKey.BACKSPACE}
+      text={FunctionKey.NEGATE}
       onClick={onClick}
     />
   );
 };
 
-export default BackspaceButton;
+export default NegateButton;

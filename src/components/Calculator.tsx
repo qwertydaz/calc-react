@@ -1,5 +1,5 @@
 import DisplayScreen from './display/DisplayScreen';
-import { Card } from 'antd';
+import { Col, Divider, Row } from 'antd';
 import { OperandKey } from '../consts/enums';
 import ClearButton from './buttons/ClearButton';
 import OperandButton from './buttons/OperandButton';
@@ -10,79 +10,90 @@ import DivideButton from './buttons/DivideButton';
 import MultiplyButton from './buttons/MultiplyButton';
 import BackspaceButton from './buttons/BackspaceButton';
 import DecimalButton from './buttons/DecimalButton';
+import NegateButton from './buttons/NegateButton';
 
 const Calculator: React.FC = () => {
-  const rowStyle: React.CSSProperties = {
-    width: '25%',
-    textAlign: 'center',
-  };
-  const bottomRowStyle: React.CSSProperties = {
-    width: '50%',
-    textAlign: 'center',
-  };
-
   return (
-    <Card
+    <div
       data-testid='calculator'
       className='calculator'
-      title={<DisplayScreen />}
-      bordered={false}
     >
-      <Card.Grid hoverable={false} style={rowStyle}>
-        <BackspaceButton />
-      </Card.Grid>
-      <Card.Grid hoverable={false} style={rowStyle}>
-        <ClearButton />
-      </Card.Grid>
-      <Card.Grid hoverable={false} style={rowStyle}>
-        <DecimalButton />
-      </Card.Grid>
-      <Card.Grid hoverable={false} style={rowStyle}>
-        <DivideButton />
-      </Card.Grid>
-      <Card.Grid hoverable={false} style={rowStyle}>
-        <OperandButton numberText={OperandKey.SEVEN} />
-      </Card.Grid>
-      <Card.Grid hoverable={false} style={rowStyle}>
-        <OperandButton numberText={OperandKey.EIGHT} />
-      </Card.Grid>
-      <Card.Grid hoverable={false} style={rowStyle}>
-        <OperandButton numberText={OperandKey.NINE} />
-      </Card.Grid>
-      <Card.Grid hoverable={false} style={rowStyle}>
-        <MultiplyButton />
-      </Card.Grid>
-      <Card.Grid hoverable={false} style={rowStyle}>
-        <OperandButton numberText={OperandKey.FOUR} />
-      </Card.Grid>
-      <Card.Grid hoverable={false} style={rowStyle}>
-        <OperandButton numberText={OperandKey.FIVE} />
-      </Card.Grid>
-      <Card.Grid hoverable={false} style={rowStyle}>
-        <OperandButton numberText={OperandKey.SIX} />
-      </Card.Grid>
-      <Card.Grid hoverable={false} style={rowStyle}>
-        <SubtractButton />
-      </Card.Grid>
-      <Card.Grid hoverable={false} style={rowStyle}>
-        <OperandButton numberText={OperandKey.ONE} />
-      </Card.Grid>
-      <Card.Grid hoverable={false} style={rowStyle}>
-        <OperandButton numberText={OperandKey.TWO} />
-      </Card.Grid>
-      <Card.Grid hoverable={false} style={rowStyle}>
-        <OperandButton numberText={OperandKey.THREE} />
-      </Card.Grid>
-      <Card.Grid hoverable={false} style={rowStyle}>
-        <AddButton />
-      </Card.Grid>
-      <Card.Grid hoverable={false} style={bottomRowStyle}>
-        <OperandButton numberText={OperandKey.ZERO} />
-      </Card.Grid>
-      <Card.Grid hoverable={false} style={bottomRowStyle}>
-        <SolveButton />
-      </Card.Grid>
-    </Card>
+      <DisplayScreen />
+
+      <Divider />
+
+      <Row justify='center'>
+        <Col>
+          <BackspaceButton />
+        </Col>
+        <Col>
+          <NegateButton />
+        </Col>
+        <Col>
+          <ClearButton />
+        </Col>
+        <Col>
+          <DivideButton />
+        </Col>
+      </Row>
+
+      <Row justify='center'>
+        <Col>
+          <OperandButton numberText={OperandKey.SEVEN} />
+        </Col>
+        <Col>
+          <OperandButton numberText={OperandKey.EIGHT} />
+        </Col>
+        <Col>
+          <OperandButton numberText={OperandKey.NINE} />
+        </Col>
+        <Col>
+          <MultiplyButton />
+        </Col>
+      </Row>
+
+      <Row justify='center'>
+        <Col>
+          <OperandButton numberText={OperandKey.FOUR} />
+        </Col>
+        <Col>
+          <OperandButton numberText={OperandKey.FIVE} />
+        </Col>
+        <Col>
+          <OperandButton numberText={OperandKey.SIX} />
+        </Col>
+        <Col>
+          <SubtractButton />
+        </Col>
+      </Row>
+
+      <Row justify='center'>
+        <Col>
+          <OperandButton numberText={OperandKey.ONE} />
+        </Col>
+        <Col>
+          <OperandButton numberText={OperandKey.TWO} />
+        </Col>
+        <Col>
+          <OperandButton numberText={OperandKey.THREE} />
+        </Col>
+        <Col>
+          <AddButton />
+        </Col>
+      </Row>
+
+      <Row justify='center'>
+        <Col className={'wide-block-button'}>
+          <OperandButton numberText={OperandKey.ZERO} />
+        </Col>
+        <Col>
+          <DecimalButton />
+        </Col>
+        <Col>
+          <SolveButton />
+        </Col>
+      </Row>
+    </div>
   );
 };
 

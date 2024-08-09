@@ -12,7 +12,11 @@ const ClearButton: React.FC = () => {
   }
 
   return (
-    <BlockButton text={FunctionKey.CLEAR} onClick={onClick} />
+    <BlockButton
+      className='function-button'
+      text={FunctionKey.CLEAR}
+      onClick={onClick}
+    />
   );
 };
 

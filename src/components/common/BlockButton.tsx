@@ -1,6 +1,4 @@
 import { Button } from 'antd';
-import { ConfigContext } from 'antd/es/config-provider';
-import { useContext } from 'react';
 
 interface BlockButtonProps {
   className?: string;
@@ -16,14 +14,10 @@ const BlockButton: React.FC<BlockButtonProps> = ({
   onClick,
   ...props
 }) => {
-
-  const { getPrefixCls } = useContext(ConfigContext);
-  const rootPrefixCls = getPrefixCls();
-
   return (
     <Button
       data-testid={className}
-      className={`block-button ${className} ${rootPrefixCls}-btn-primary`}
+      className={`block-button ${className}`}
       block
       icon={icon}
       onClick={onClick}
