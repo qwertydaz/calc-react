@@ -7,8 +7,8 @@
 
   /* Operand Button Colours */
   --operand-button-colour: #a0a0a0;
-  --operand-button-hover-colour: #cecece;
-  --operand-button-active-colour: #ffffff;
+  --operand-button-hover-colour: #c5c5c5;
+  --operand-button-active-colour: #dcdada;
 
   /* Operator Button Colours */
   --operator-button-colour: #fab70f;
@@ -16,8 +16,8 @@
   --operator-button-active-colour: #ffbe5e;
 
   /* Function Button Colours */
-  --function-button-colour: #f6f6f6;
-  --function-button-hover-colour: #ececec;
+  --function-button-colour: #e8e8e8;
+  --function-button-hover-colour: #e0e0e0;
   --function-button-active-colour: #ffffff;
 
   /* Solve Button Colours */
@@ -44,7 +44,7 @@ body {
 }
 
 .expression {
-  color: grey;
+  color: #808080;
   min-height: 20px;
   min-width: 100px;
 }
@@ -54,13 +54,21 @@ body {
   width: 100%;
   height: 100%;
   font-size: 1.5em;
-  font-weight: bolder;
+  font-weight: 1000;
   border-radius: 20px;
   border: 1px solid var(--button-border-colour);
-  transition: background-color 0.8s, border-color 0.8s, color 0.8s;
+  transition:
+    background-color 0.8s,
+    border-color 0.8s,
+    color 0.8s,
+    box-shadow 0.8s;
+  box-shadow: -2px 4px 4px #0000006b;
 }
 .block-button:hover {
-  transition: background-color 0.1s, border-color 0.1s, color 0.1s;
+  transition:
+    background-color 0.1s,
+    border-color 0.1s,
+    color 0.1s;
   border-color: var(--button-border-hover-colour) !important;
   color: var(--button-text-hover-colour) !important;
 }
@@ -79,7 +87,12 @@ body {
   opacity: 0;
 }
 .block-button:active {
-  transition: background-color 0.1s, border-color 0.1s, color 0.1s;
+  transition:
+    background-color 0.1s,
+    border-color 0.1s,
+    color 0.1s,
+    box-shadow 0.1s;
+    box-shadow: 0px 0px 0px #00000000;
 }
 
 /* Operand Button */
@@ -134,18 +147,40 @@ body {
   background-color: var(--solve-button-active-colour) !important;
 }
 
+/* Display Screen */
+.display-screen {
+  background-color: #caffce;
+  color: black;
+  border-radius: 20px;
+  padding: 10px;
+  height: 100px;
+  width: 75%;
+  margin: 2% auto 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  box-shadow: inset -1px 2px 2px #0000006b;
+  font-size: 2em;
+  font-weight: 600;
+  text-align: left;
+  transition: transform 0.3s ease-in-out;
+}
+
+.display-screen:hover {
+  transform: scale(1.05);
+}
+
 /* Calculator */
 .calculator {
   background-color: #3c3c3c;
-  padding: 10px;
-  border: 1px solid #000000;
-  border-radius: 10px;
+  padding: 15px;
+  border-radius: 20px;
   height: 500px;
   width: 75%;
   margin: 2% auto 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  box-shadow: -2px 4px 4px #0000006b;
 }
 
 .calculator .ant-row {
