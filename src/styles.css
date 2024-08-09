@@ -68,12 +68,12 @@ body {
   background-color: white !important;
 }
 
-.equate-button.block-button {
+.solve-button.block-button {
   --button-bg-color: #fab70f;
   background-color: var(--button-bg-color);
 }
 
-.equate-button.block-button:hover {
+.solve-button.block-button:hover {
   background-color: #fa9c0f !important;
 }
 

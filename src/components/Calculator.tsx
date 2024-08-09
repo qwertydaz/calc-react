@@ -1,9 +1,9 @@
 import DisplayScreen from './display/DisplayScreen';
 import { Card } from 'antd';
-import { NumberKey } from '../consts/enums';
+import { OperandKey } from '../consts/enums';
 import ClearButton from './buttons/ClearButton';
-import NumberButton from './buttons/NumberButton';
-import EquateButton from './buttons/EquateButton';
+import OperandButton from './buttons/OperandButton';
+import SolveButton from './buttons/SolveButton';
 import AddButton from './buttons/AddButton';
 import SubtractButton from './buttons/SubtractButton';
 import DivideButton from './buttons/DivideButton';
@@ -41,46 +41,46 @@ const Calculator: React.FC = () => {
         <DivideButton />
       </Card.Grid>
       <Card.Grid hoverable={false} style={rowStyle}>
-        <NumberButton numberText={NumberKey.SEVEN} />
+        <OperandButton numberText={OperandKey.SEVEN} />
       </Card.Grid>
       <Card.Grid hoverable={false} style={rowStyle}>
-        <NumberButton numberText={NumberKey.EIGHT} />
+        <OperandButton numberText={OperandKey.EIGHT} />
       </Card.Grid>
       <Card.Grid hoverable={false} style={rowStyle}>
-        <NumberButton numberText={NumberKey.NINE} />
+        <OperandButton numberText={OperandKey.NINE} />
       </Card.Grid>
       <Card.Grid hoverable={false} style={rowStyle}>
         <MultiplyButton />
       </Card.Grid>
       <Card.Grid hoverable={false} style={rowStyle}>
-        <NumberButton numberText={NumberKey.FOUR} />
+        <OperandButton numberText={OperandKey.FOUR} />
       </Card.Grid>
       <Card.Grid hoverable={false} style={rowStyle}>
-        <NumberButton numberText={NumberKey.FIVE} />
+        <OperandButton numberText={OperandKey.FIVE} />
       </Card.Grid>
       <Card.Grid hoverable={false} style={rowStyle}>
-        <NumberButton numberText={NumberKey.SIX} />
+        <OperandButton numberText={OperandKey.SIX} />
       </Card.Grid>
       <Card.Grid hoverable={false} style={rowStyle}>
         <SubtractButton />
       </Card.Grid>
       <Card.Grid hoverable={false} style={rowStyle}>
-        <NumberButton numberText={NumberKey.ONE} />
+        <OperandButton numberText={OperandKey.ONE} />
       </Card.Grid>
       <Card.Grid hoverable={false} style={rowStyle}>
-        <NumberButton numberText={NumberKey.TWO} />
+        <OperandButton numberText={OperandKey.TWO} />
       </Card.Grid>
       <Card.Grid hoverable={false} style={rowStyle}>
-        <NumberButton numberText={NumberKey.THREE} />
+        <OperandButton numberText={OperandKey.THREE} />
       </Card.Grid>
       <Card.Grid hoverable={false} style={rowStyle}>
         <AddButton />
       </Card.Grid>
       <Card.Grid hoverable={false} style={bottomRowStyle}>
-        <NumberButton numberText={NumberKey.ZERO} />
+        <OperandButton numberText={OperandKey.ZERO} />
       </Card.Grid>
       <Card.Grid hoverable={false} style={bottomRowStyle}>
-        <EquateButton />
+        <SolveButton />
       </Card.Grid>
     </Card>
   );

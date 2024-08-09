@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { RootState } from '../../store';
+import { RootState } from '../../store/store';
 
 const CurrentOperand: React.FC = () => {
   const currentOperand = useSelector((state: RootState) => state.calculator.currentOperand);

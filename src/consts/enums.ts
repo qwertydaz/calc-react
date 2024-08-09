@@ -1,4 +1,4 @@
-const enum NumberKey {
+const enum OperandKey {
   ONE = '1',
   TWO = '2',
   THREE = '3',
@@ -15,18 +15,24 @@ const enum OperatorKey {
   ADDITION = '+',
   SUBTRACTION = '-',
   MULTIPLICATION = '*',
-  DIVISION = '/'
+  DIVISION = '/',
 };
 
 const enum FunctionKey {
   CLEAR = 'C',
-  EQUATE = '=',
+  SOLVE = '=',
   DECIMAL = '.',
   BACKSPACE = '←',
 };
 
+const enum Mode {
+  READ,
+  WRITE,
+};
+
 export {
-  NumberKey,
+  OperandKey,
   OperatorKey,
   FunctionKey,
+  Mode,
 };

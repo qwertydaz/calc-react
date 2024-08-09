@@ -1,6 +1,6 @@
 import { FunctionKey } from '../../consts/enums';
 import BlockButton from '../common/BlockButton';
-import { clearDisplay } from '../../reducers/calculatorReducer';
+import { clearDisplay } from '../../store/reducers/calculator.reducer';
 import { useDispatch } from 'react-redux';
 
 const ClearButton: React.FC = () => {
