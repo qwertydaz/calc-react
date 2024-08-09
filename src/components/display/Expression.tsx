@@ -5,7 +5,10 @@ const Expression: React.FC = () => {
   const expression = useSelector(selectExpression);
 
   return (
-    <div className='expression'>
+    <div
+      data-testid='expression'
+      className='expression'
+    >
       {expression}
     </div>
   );

@@ -11,7 +11,11 @@ const DecimalButton: React.FC = () => {
   }
 
   return (
-    <BlockButton text={FunctionKey.DECIMAL} onClick={onClick} />
+    <BlockButton
+      className='operand-button'
+      text={FunctionKey.DECIMAL}
+      onClick={onClick}
+    />
   );
 };
 

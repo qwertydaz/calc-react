@@ -11,7 +11,11 @@ const DivideButton: React.FC = () => {
   };
 
   return (
-    <BlockButton text={OperatorKey.DIVISION} onClick={onClick} />
+    <BlockButton
+      className='operator-button'
+      text={OperatorKey.DIVISION}
+      onClick={onClick}
+    />
   );
 };
 

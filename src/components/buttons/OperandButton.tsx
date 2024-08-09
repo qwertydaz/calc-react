@@ -16,7 +16,7 @@ const OperandButton: React.FC<OperandButtonProps> = ({numberText}) => {
 
   return (
     <BlockButton
-      className='number-button'
+      className='operand-button'
       text={numberText}
       onClick={onClick}
     />
