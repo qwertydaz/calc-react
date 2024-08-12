@@ -1,3 +1,4 @@
+import React from 'react';
 import { Button } from 'antd';
 
 interface BlockButtonProps {
@@ -5,7 +6,7 @@ interface BlockButtonProps {
   text?: string;
   icon?: React.ReactNode;
   onClick?: () => void;
-};
+}
 
 const BlockButton: React.FC<BlockButtonProps> = ({
   className='',

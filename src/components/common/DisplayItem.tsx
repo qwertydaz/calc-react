@@ -1,3 +1,5 @@
+import React from 'react';
+
 interface DisplayItemProps<T> {
   className?: string;
   item?: T;

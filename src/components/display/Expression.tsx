@@ -1,3 +1,4 @@
+import React from 'react';
 import { useSelector } from 'react-redux';
 import { selectExpression } from '../../store/selectors/calculator.selectors';
 

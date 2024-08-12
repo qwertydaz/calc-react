@@ -7,7 +7,7 @@ interface CalculatorState {
   firstOperand?: Operand;
   operator?: Operator;
   secondOperand?: Operand;
-};
+}
 
 const initialState: CalculatorState = {
   currentOperand: 'please input a number ...',
@@ -19,7 +19,7 @@ const initialState: CalculatorState = {
 
 const generateExpression = (state: CalculatorState) => {
   return `${state.firstOperand?.value} ${state.operator?.value} ${state.secondOperand?.value}`.trim();
-}
+};
 
 const calculatorSlice = createSlice({
   name: 'calculator',

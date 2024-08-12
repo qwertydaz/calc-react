@@ -9,14 +9,14 @@ const enum OperandKey {
   EIGHT = '8',
   NINE = '9',
   ZERO = '0',
-};
+}
 
 const enum OperatorKey {
   ADDITION = '+',
   SUBTRACTION = '-',
   MULTIPLICATION = '*',
   DIVISION = '/',
-};
+}
 
 const enum FunctionKey {
   BACKSPACE = '←',
@@ -24,12 +24,12 @@ const enum FunctionKey {
   CLEAR = 'C',
   SOLVE = '=',
   DECIMAL = '.',
-};
+}
 
 const enum Mode {
   READ,
   WRITE,
-};
+}
 
 export {
   OperandKey,
