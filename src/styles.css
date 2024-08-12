@@ -1,5 +1,6 @@
 :root {
   /* Button Colours */
+  --button-border-colour: #000000c6;
   --button-border-hover-colour: #036cd4;
   --button-text-dark-colour: #000000c6;
   --button-text-light-colour: #ffffff;
@@ -92,7 +93,7 @@ body {
     border-color 0.1s,
     color 0.1s,
     box-shadow 0.1s;
-    box-shadow: 0px 0px 0px #00000000;
+    box-shadow: 0 0 0 #00000000;
 }
 
 /* Operand Button */
@@ -162,10 +163,6 @@ body {
   font-size: 2em;
   font-weight: 600;
   text-align: left;
-}
-
-.display-screen:hover {
-  transform: scale(1.05);
 }
 
 /* Calculator */
