@@ -1,3 +1,4 @@
+import React from 'react';
 import { FunctionKey } from '../../consts/enums';
 import BlockButton from '../common/BlockButton';
 // import { useDispatch } from 'react-redux';

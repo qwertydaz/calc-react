@@ -1,8 +1,9 @@
+import React from 'react';
 import { useSelector } from 'react-redux';
-import { RootState } from '../../store/store';
+import { selectCurrentOperand } from '../../store/selectors/calculator.selectors';
 
 const CurrentOperand: React.FC = () => {
-  const currentOperand = useSelector((state: RootState) => state.calculator.currentOperand);
+  const currentOperand = useSelector(selectCurrentOperand);
 
   return (
     <div

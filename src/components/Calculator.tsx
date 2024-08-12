@@ -1,16 +1,21 @@
+import React from 'react';
 import DisplayScreen from './display/DisplayScreen';
 import { Col, Divider, Row } from 'antd';
 import { OperandKey } from '../consts/enums';
-import ClearButton from './buttons/ClearButton';
-import OperandButton from './buttons/OperandButton';
-import SolveButton from './buttons/SolveButton';
-import AddButton from './buttons/AddButton';
-import SubtractButton from './buttons/SubtractButton';
-import DivideButton from './buttons/DivideButton';
-import MultiplyButton from './buttons/MultiplyButton';
-import BackspaceButton from './buttons/BackspaceButton';
-import DecimalButton from './buttons/DecimalButton';
-import NegateButton from './buttons/NegateButton';
+import Buttons from './buttons/buttons';
+
+const {
+  OperandButton,
+  AddButton,
+  SubtractButton,
+  MultiplyButton,
+  DivideButton,
+  SolveButton,
+  BackspaceButton,
+  ClearButton,
+  DecimalButton,
+  NegateButton,
+} = Buttons;
 
 const Calculator: React.FC = () => {
   return (

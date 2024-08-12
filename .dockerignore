@@ -1,0 +1,7 @@
+# Ignore all files
+*
+
+# Don't ignore these files
+!.dockerignore
+!Dockerfile
+!src/
